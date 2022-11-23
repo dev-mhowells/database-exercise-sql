@@ -1,4 +1,4 @@
-require 'album'
+require_relative 'album'
 
 class AlbumRepository
 
@@ -30,7 +30,7 @@ class AlbumRepository
         params = [id]
 
         result = DatabaseConnection.exec_params(sql, params)
-        p result
+
         return result
     end
   
