@@ -123,7 +123,7 @@ Using comments, define the method signatures (arguments and return value) and wh
 # Repository class
 # (in lib/artist_repository.rb)
 
-class ArtistRepository
+class AlbumRepository
 
   # Selecting all records
   # No arguments
@@ -138,9 +138,9 @@ class ArtistRepository
   # One argument: the id (number)
   def find(id)
     # Executes the SQL query:
-    # SELECT id, name, cohort_name FROM students WHERE id = $1;
+    # SELECT id, title, release_year, artist_id FROM albums WHERE id = $1;
 
-    # Returns a single Student object.
+    # Returns a single Album object.
   end
 
   # Add more methods below for each operation you'd like to implement.
@@ -192,7 +192,7 @@ students = repo.all
 
 repo = AlbumRepository.new
 
-repo.all
+repo.find(1) # => object with: 'song1', '2022', '1'
 
 
 # 2

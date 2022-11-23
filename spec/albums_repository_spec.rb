@@ -18,8 +18,18 @@ RSpec.describe AlbumRepository do
         repo = AlbumRepository.new
 
         album = repo.all
-        expect(album.first.title).to eq 'song1' 
+        expect(album.first['title']).to eq 'song1' 
         expect(album.first['release_year']).to eq '2022' 
         expect(album.first['artist_id']).to eq '1' 
+    end
+
+    it 'finds one album object by id' do
+
+        repo = AlbumRepository.new
+
+        found = repo.find(1)
+        expect(found.first['title']).to eq 'song1' 
+        expect(found.first['release_year']).to eq '2022' 
+        expect(found.first['artist_id']).to eq '1' 
     end
 end
