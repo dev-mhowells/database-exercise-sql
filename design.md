@@ -196,7 +196,18 @@ repo.find(1) # => object with: 'song1', '2022', '1'
 
 
 # 2
-# Get a single student
+# Create new albums
+
+repository = AlbumRepository.new
+
+album #= Album.new
+album.title #= 'Trompe le Monde'
+album.release_year #= 1991
+album.artist_id #= 1
+
+repository.create(album)
+
+all_albums = repository.all
 
 # Add more examples for each method
 ```
@@ -233,4 +244,5 @@ end
 
 _After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour._
 
+# The all_albums array should contain the new Album object
 

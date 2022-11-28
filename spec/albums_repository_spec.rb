@@ -1,4 +1,5 @@
 require 'album_repository'
+require 'album'
 
 RSpec.describe AlbumRepository do
 
@@ -32,4 +33,19 @@ RSpec.describe AlbumRepository do
         expect(found.first['release_year']).to eq '2022' 
         expect(found.first['artist_id']).to eq '1' 
     end
+
+    it '' do
+        repository = AlbumRepository.new
+
+        album = Album.new
+        album.title = 'Trompe le Monde'
+        album.release_year = 1991
+        album.artist_id = 1
+
+        repository.create(album)
+
+        all_albums = repository.all
+        expect(all_albums[2]['title']).to eq 'Trompe le Monde'
+    end
+    
 end

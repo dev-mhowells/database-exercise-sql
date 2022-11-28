@@ -20,4 +20,5 @@ album_repository = AlbumRepository.new
 # end
 
 artist_repository.all.each { |artist| p artist }
-p album_repository.find(3).first
+album_repository.all.each { |artist| p artist }
+# p album_repository.find(3).first
